@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SisCondo | Efetuar Login</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />    
+    <link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
+  </head>
+  <body>
+    <h1>SisCondo | Login</h1>
+
+    <header class="navbar navbar-light bg-white text-center">
+      <div class="container-fluid text-center">
+        <img
+          src="../imagens/A3initiative.png"
+          alt="logomarca A3 Initiative Corporation" 
+          class="img-fluid"
+        />
+        <div class="form-check form-switch">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            role="switch"
+            id="modoEscuro"
+            onclick="aplicaModoEscuro()"
+          />
+          <label class="form-check-label" for="modoEscuro">Modo escuro</label>
+        </div>
+      </div>
+    </header>
+
+    <div class="container-fluid">
+      <div class="row">
+        <form
+          class="col-md-4 position-absolute top-50 start-50 translate-middle"
+          id="formAcesso"
+        >
+          <fieldset>
+            <legend>Acesso SisCondo</legend>
+            <div class="col-12">
+              <div class="mb-3">
+                <label for="loginAcesso" class="form-label">Login:</label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="loginAcesso"
+                  placeholder="Informe seu login"
+                />
+                <div id="helpLoginAcesso" class="form-text">
+                  Informe um e-mail válido.
+                </div>
+              </div>
+              <div class="mb-3">
+                <label for="senhaAcesso" class="form-label">Senha:</label>
+                <input
+                  type="password"
+                  class="form-control"
+                  id="senhaAcesso"
+                  placeholder="Informe sua senha"
+                />
+                <div id="helpLoginAcesso" class="form-text">
+                  Informe sua senha com até 6 caracteres.
+                </div>
+              </div>
+              <div class="col-12">
+                <a href="">Recuperar senha</a>
+              </div>
+              <br />
+              <div class="col-12">
+                <a href="registrar_encomenda" id="botaoAcesso" class="btn btn-primary">Acessar</a>
+              </div>
+            </div>
+          </fieldset>
+        </form>
+      </div>
+    </div>
+
+    <footer class="navbar fixed-bottom navbar-light bg-light text-center">
+      <!-- Copyright -->
+      <div class="container-fluid p-3" id="footerAcesso">
+        <span class="text-center">&copy; A3 Initiative Corporation, 2022</span>
+      </div>
+      <!-- Copyright -->
+    </footer>
+	
+	<script src="../js/scripts.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="../js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
