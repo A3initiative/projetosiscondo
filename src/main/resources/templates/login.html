@@ -5,35 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SisCondo | Efetuar Login</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css" />
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />    
     <link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
   </head>
   <body>
-    <h1>SisCondo | Login</h1>
 
-    <header class="navbar navbar-light bg-white text-center">
-      <div class="container-fluid text-center">
+    <div class="container-fluid"> 
+    
+      <div class="row">
+      <nav>
         <img
           src="../imagens/A3initiative.png"
           alt="logomarca A3 Initiative Corporation" 
           class="img-fluid"
         />
-        <div class="form-check form-switch">
-          <input
-            class="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="modoEscuro"
-            onclick="aplicaModoEscuro()"
-          />
-          <label class="form-check-label" for="modoEscuro">Modo escuro</label>
-        </div>
-      </div>
-    </header>
-
-    <div class="container-fluid">
-      <div class="row">
+      </nav>   
+    	
         <form
           class="col-md-4 position-absolute top-50 start-50 translate-middle"
           id="formAcesso"
@@ -70,7 +58,7 @@
               </div>
               <br />
               <div class="col-12">
-                <a href="registrar_encomenda" id="botaoAcesso" class="btn btn-primary">Acessar</a>
+                <a href="index" id="botaoAcesso" class="btn btn-primary">Acessar</a>
               </div>
             </div>
           </fieldset>
@@ -89,5 +77,6 @@
 	<script src="../js/scripts.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="../js/bootstrap.bundle.min.js"></script>
-  </body>
+    
+</body>
 </html>

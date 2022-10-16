@@ -1,16 +1,15 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>SisCondo | Gestão de Usuários | Cadastro</title>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>SisCondo | Emissão de Relatórios</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />    
     <link href="../css/bootstrap.min.css" rel="stylesheet" />  
     <link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
-  </head>
-  <body>
-    
+</head>
+<body>
+
     <main>
     
     <header>
@@ -33,7 +32,6 @@
       
       <br>
     
-    
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
           <div class="container-fluid">
@@ -52,7 +50,7 @@
             <div class="collapse navbar-collapse" id="navbarNavDropdown">
               <ul class="navbar-nav">
                 <li class="nav-item">
-                  <a class="nav-link active" aria-current="page" href="#"
+                  <a class="nav-link active" aria-current="page" href="index"
                     >Página Principal</a
                   >
                 </li>
@@ -128,137 +126,115 @@
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><a href="#">Página principal</a></li>
             <li class="breadcrumb-item" aria-current="page">
-              Gestão de usuários
+              Emissão de Relatórios
             </li>
-            <li class="breadcrumb-item active" aria-current="page">Cadastrar</li>
           </ol>
         </nav>
 
         <h1>SisCondo</h1>
-        <h2>Gestão de usuários | Registrar</h2>
+        <h2>Emissão de Relatórios</h2>
 
         <br />
 
-        <form class="row g-3" id="formRegistrarUsuario" method="POST">
-          <div class="col-md-6">
-            <label for="selectPerfil" class="form-label">Perfil</label>
-            <select
-              id="selectPerfil"
-              class="form-select"
-              onchange="exibeCampos()"
-            >
-              <option selected>Selecione o perfil</option>
-              <option value="Morador(a)" onchange="exibeCampos()">
-                Morador(a)
-              </option>
-              <option value="Mensageiro(a)" onchange="exibeCampos()">
-                Mensageiro(a)
-              </option>
-              <option value="Supervisor(a)" onchange="exibeCampos()">
-                Supervisor(a)
-              </option>
-            </select>
-          </div>
-          <div class="col-md-10">
-            <label
-              for="inputNomeUsuario"
-              class="form-label"
-              id="tipoUsuario"
-            ></label>
-            <input name="nome"
-              type="text"
-              class="form-control"
-              id="inputNomeUsuario"
-              aria-describedby="nomeUsuarioHelp"
-            />
-          </div>
+        <form class="row g-3" id="formEmitirRelatorio">
+                      
+              <div class="col-md-2">
+                <label for="periodoInicial" class="form-label">Período Inicial</label>
+                <input class="form-control me-2" type="date" placeholder="Período Inicial" aria-label="Período Inicial">
+              </div>
+              <div class="col-md-2">                  
+                <label for="periodoFinal" class="form-label">Período Final</label>
+                <input class="form-control me-2" type="date" placeholder="Período Final" aria-label="Período Final">
+              </div>   
+
           <div class="col-md-3">
-            <label for="inputTelefoneUsuario" class="form-label"
-              >Telefone de contato</label
-            >
-            <input name="telefone"
-              type="tel"
-              class="form-control"
-              id="inputTelefoneUsuario"
-              aria-describedby="contatoHelp"
-            />
-          </div>
-          <div class="col-md-4">
-            <label for="inputEmailUsuario" class="form-label">E-mail</label>
-            <input name="email"
-              type="email"
-              class="form-control"
-              id="inputEmailUsuario"
-              aria-describedby="emailHelp"
-            />
-          </div>
-          <div class="col-md-3">
-            <label for="inputSenhaUsuario" class="form-label">Senha</label>
-            <input name="senha"
-              type="password"
-              class="form-control"
-              maxlength="6"
-              id="inputSenhaUsuario"
-              aria-describedby="senhaHelp"
-            />
-            <br />
-          </div>
-          <div class="col-md-3" id="moradorResponsavel">
-            <label for="selectResponsavel" class="form-label"
-              >Morador(a) Responsável</label
-            >
-            <select id="selectResponsavel" class="form-select">
-              <option selected>Selecione</option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
+            <label for="selectBloco" class="form-label">Prazo de guarda</label>
+            <select id="selectBloco" class="form-select">
+              <option selected>Selecione o prazo de guarda</option>
+              <option>Prazo de 2 dias úteis expirado</option>
+              <option>Prazo de 5 dias úteis expirado</option>
+              <option>Listar Todos</option>
             </select>
-          </div>
-          <div class="col-md-3" id="blocoMorador">
+          </div>          
+
+          <div class="col-md-2">
             <label for="selectBloco" class="form-label">Bloco</label>
             <select id="selectBloco" class="form-select">
               <option selected>Selecione o bloco</option>
               <option>Bloco 1</option>
               <option>Bloco 2</option>
-              <option>Bloco 3</option>
+              <option>Bloco 3</option>       
+              <option>Listar Todos</option>
             </select>
-          </div>
-          <div class="col-md-3" id="andarMorador">
-            <label for="selectBloco" class="form-label">Andar</label>
+          </div>          
+
+          <div class="col-md-3">
+            <label for="selectBloco" class="form-label">Situação</label>
             <select id="selectBloco" class="form-select">
-              <option selected>Selecione o andar</option>
-              <option>1º andar</option>
-              <option>2º andar</option>
-              <option>3º andar</option>
+              <option selected>Selecione a situação</option>
+              <option>Disponível para retirar</option>
+              <option>Encomendas retiradas</option>
+              <option>Listar Todos</option>
             </select>
           </div>
-          <div class="col-md-3" id="unidadeMorador">
-            <label for="selectUnidade" class="form-label">Unidade</label>
-            <select id="selectUnidade" class="form-select">
-              <option selected>Selecione a unidade</option>
-              <option>Unidade A</option>
-              <option>Unidade B</option>
-              <option>Unidade C</option>
-            </select>
-          </div>
-          <div class="col-md-3" id="matriculaMensageiro">
-            <label for="inputMatricula" class="form-label">Matrícula</label>
-            <input
-              type="text"
-              class="form-control"
-              id="inputMatricula"
-              aria-describedby="matriculaHelp"
-            />
-          </div>
 
-          <div id="helpCampos" class="form-text">
-            Todos os campos são de preenchimento obrigatório.
-          </div>
-
-          <div class="col-12">
-            <input type="submit" class="btn btn-primary" value="Cadastrar"></input>
+          <div class="col-12">            
+            <button type="reset" class="btn btn-outline-secondary">Limpar</button>
+            <button type="submit" class="btn btn-primary">
+              Emitir relatório
+            </button>
             <br /><br />
           </div>
+
         </form>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Encomendas disponíveis para retirar</strong></div>
+            <div class="card-body">
+              <h5 class="card-title">Situação: Encomenda na Mensageria disponível para retirar</h5>
+              <p class="card-text"> 
+              <span th:text="${listaPessoas}"></span>       
+                Apartamento: Bloco 1 - Unidade 101<br />
+                Recebida em: 18/06/2022              
+              </p>
+              <a href="#" class="btn btn-primary">Mais informações</a>
+            </div>
+          </div>
+
+          <br>
+
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomendas retiradas</strong></div>
+            <div class="card-body">
+              <h5 class="card-title">Situação: Encomenda retirada</h5>
+              <p class="card-text"> 
+                Apartamento: Bloco 1 - Unidade 303<br />
+                Retirado por morador(a): Maria<br />
+                Recebida em: 15/06/2022<br />
+                Entregue em: 16/06/2022               
+              </p>
+              <a href="#" class="btn btn-primary">Mais informações</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Situação: Encomenda retirada</h5>
+              <p class="card-text">      
+                Recebida em: 13/06/2022<br />
+                Retirado por morador(a): José<br />
+                Apartamento: Bloco 1 - Unidade 202<br />
+                Entregue em: 13/06/2022 
+              </p>
+              <a href="#" class="btn btn-primary">Mais informações</a>
+            </div>
+          </div>
+
+          <br>
+          <button class="btn btn-primary" onClick="window.print()">Imprimir</button>
+        </div>
       </div>
     </main>
 
@@ -269,9 +245,9 @@
       </div>
       <!-- Copyright -->
     </footer>
-
-    <script src="../js/valida.js"></script>
+s
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+
 </body>
 </html>

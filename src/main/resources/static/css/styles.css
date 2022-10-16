@@ -1,3 +1,15 @@
-h2 {
-	color: rgb(0, 64, 128);
+h3 {
+	color: #216096;
+}
+
+#botao_principal{
+	background-color: #216096;
+}
+
+#logo_principal{
+	width: 15%;
+}
+
+.navbar-brand{
+	color: #000000;
 }

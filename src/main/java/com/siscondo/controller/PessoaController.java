@@ -28,15 +28,13 @@ public class PessoaController {
 	 @Autowired
 	 private PessoaRepository pessoaRepository;
 
-	    // get pessoas	    
-	 	
-	    @GetMapping("/pessoa")
-	    public List<Pessoa> getAllPessoas() {
-	        return pessoaRepository.findAll();
-	    }
+	 // get pessoas	
+	 @GetMapping("/pessoas")
+     public List<Pessoa> getAllPessoas() {
+         return pessoaRepository.findAll();
+     } 
 
-	    // get pessoa by Id
-	    
+	    // get pessoa by Id	    
 	    @GetMapping("/pessoa/{id}")
 	    public ResponseEntity<Pessoa> getPessoaById(@PathVariable(value = "id") Long pessoaId)
 	        throws ResourceNotFoundException {
