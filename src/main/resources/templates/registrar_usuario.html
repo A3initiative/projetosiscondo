@@ -145,8 +145,7 @@
             <select
               id="selectPerfil"
               class="form-select"
-              onchange="exibeCampos()"
-            >
+              onchange="exibeCampos()">
               <option selected>Selecione o perfil</option>
               <option value="Morador(a)" onchange="exibeCampos()">
                 Morador(a)
@@ -169,14 +168,14 @@
               type="text"
               class="form-control"
               id="inputNomeUsuario"
-              aria-describedby="nomeUsuarioHelp"
+              aria-describedby="nomeUsuarioHelp" required 
             />
           </div>
           <div class="col-md-3">
             <label for="inputTelefoneUsuario" class="form-label"
               >Telefone de contato</label
             >
-            <input name="telefone"
+            <input name="telefone" required  
               type="tel"
               class="form-control"
               id="inputTelefoneUsuario"
@@ -185,7 +184,7 @@
           </div>
           <div class="col-md-4">
             <label for="inputEmailUsuario" class="form-label">E-mail</label>
-            <input name="email"
+            <input name="email" required 
               type="email"
               class="form-control"
               id="inputEmailUsuario"
@@ -194,7 +193,7 @@
           </div>
           <div class="col-md-3">
             <label for="inputSenhaUsuario" class="form-label">Senha</label>
-            <input name="senha"
+            <input name="senha" required 
               type="password"
               class="form-control"
               maxlength="6"
