@@ -13,3 +13,14 @@ h3 {
 .navbar-brand{
 	color: #000000;
 }
+
+table {
+  border: 1px solid #000000;
+  border-collapse: collapse;
+  letter-spacing: 1px;
+  text-align: center;
+}
+
+td {
+    text-align: center;
+}

@@ -16,16 +16,18 @@ public class Pessoa{
     private String email;
     private String telefone;
     private String senha;
+    private String perfil;
     
     public Pessoa() {
     	  
     }
  
-    public Pessoa(String nome, String email, String telefone, String senha) {
+    public Pessoa(String nome, String email, String telefone, String senha, String perfil) {
          this.nome = nome;
          this.email = email;
          this.telefone = telefone;
          this.senha = senha;
+         this.perfil = perfil;
     } 
     
     @Id
@@ -70,6 +72,15 @@ public class Pessoa{
     
     public void setSenha(String senha) {
         this.senha = senha;
+    }
+    
+    @Column(name = "perfil", nullable = false)
+    public String getPerfil() {
+        return perfil;
+    }
+    
+    public void setPerfil(String perfil) {
+        this.perfil = perfil;
     }
 
     @Override

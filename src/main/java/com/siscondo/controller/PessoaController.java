@@ -43,15 +43,13 @@ public class PessoaController {
 	        return ResponseEntity.ok().body(pessoa);
 	    }
 	    
-	    // save pessoa
-	    
+	    // save pessoa	    
 	    @PostMapping("/pessoa")
 	    public Pessoa createPessoa(@Valid @RequestBody Pessoa pessoa) {
 	        return pessoaRepository.save(pessoa);
 	    }
 
-	    // update pessoa
-	    
+	    // update pessoa	    
 	    @PutMapping("/pessoa/{id}")
 	    public ResponseEntity<Pessoa> updatePessoa(@PathVariable(value = "id") Long pessoaId,
 	         @Valid @RequestBody Pessoa pessoaDetails) throws ResourceNotFoundException {
@@ -63,13 +61,13 @@ public class PessoaController {
 	        pessoa.setTelefone(pessoaDetails.getTelefone());
 	        pessoa.setEmail(pessoaDetails.getEmail());
 	        pessoa.setNome(pessoaDetails.getNome());
+            pessoa.setPerfil(pessoaDetails.getPerfil());
 	        
 	        final Pessoa updatedPessoa = pessoaRepository.save(pessoa);
 	        return ResponseEntity.ok(updatedPessoa);
 	    }
 
-	    // delete pessoa
-	    
+	    // delete pessoa	    
 	    @DeleteMapping("/pessoa/{id}")
 	    public Map<String, Boolean> deletePessoa(@PathVariable(value = "id") Long pessoaId)
 	         throws ResourceNotFoundException {

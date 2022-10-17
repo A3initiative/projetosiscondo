@@ -2,7 +2,7 @@ package com.siscondo;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -29,10 +29,34 @@ public class Principal {
 		return "login";
 	}
 	
+	//ENCOMENDA
+    
+    @RequestMapping(value="/projetosiscondo/consultar_encomenda")
+    public String consultarEncomenda(){
+        return "consultar_encomenda";
+    }
+    
+    @RequestMapping(value="/projetosiscondo/alterar_encomenda")
+    public String alterarEncomenda(){
+        return "alterar_encomenda";
+    }
+	
 	@RequestMapping(value="/projetosiscondo/registrar_encomenda")
 	public String registrarEncomenda(){
 		return "registrar_encomenda";
 	}
+    
+	//USUÁRIO
+	
+    @RequestMapping(value="/projetosiscondo/consultar_usuario")
+    public String consultarUsuario(){
+        return "consultar_usuario";
+    }
+    
+    @RequestMapping(value="/projetosiscondo/alterar_usuario")
+    public String alterarUsuario(){
+        return "alterar_usuario";
+    }
 	
 	@RequestMapping(value="/projetosiscondo/registrar_usuario")
 	public String registrarUsuario(){
@@ -40,7 +64,7 @@ public class Principal {
 	}
 	 
 	 @GetMapping("/projetosiscondo/emitir_relatorio")
-     public String listaPessoas(ModelMap model) {
+     public String listaPessoas(Model model) {
          model.addAttribute("listaPessoas", pessoaRepository.findAll());
          return "emitir_relatorio";
      }

@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SisCondo - Sistema de Gestão de Condomínios</title>
-<link rel="stylesheet" type="text/css" href="../css/styles.css" />
-<link href="../css/bootstrap.min.css" rel="stylesheet" />  
-<link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
+<title>SisCondo | Gestão de Usuários | Consulta</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css" />    
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />  
+    <link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
 </head>
 <body>
 
-    <main>      
+<main>
     
     <header>
     	<nav class="navbar bg-light">
@@ -24,13 +24,13 @@
 	</header>
 
 	<br>
-
+	
 	<div class="container-fluid text-center">
         Olá, supervisor(a) Admin! 
-        <a href="">Sair</a>
+        <a href="login">Sair</a>
       </div>
       
-      <br>
+       <br />    
     
       <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -70,13 +70,13 @@
                     aria-labelledby="navbarDropdownMenuLinkManterEncomenda"
                   >
                     <li>
-                      <a class="dropdown-item" href="consultar_encomenda">Consultar encomenda</a>
+                      <a class="dropdown-item" href="#">Consultar encomenda</a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="registrar_encomenda">Registrar encomenda</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="alterar_encomenda">Alterar encomenda</a>
+                      <a class="dropdown-item" href="#">Alterar encomenda</a>
                     </li>
                   </ul>
                 </li>
@@ -122,10 +122,36 @@
 
         <br />
 
-        <h1>SisCondo</h1>
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="home">Página principal</a></li>
+            <li class="breadcrumb-item" aria-current="page">
+              Gestão de Usuários
+            </li>
+            <li class="breadcrumb-item active" aria-current="page">Consultar</li>
+          </ol>
+        </nav>
 
-<script src="../js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  
+        <h1>SisCondo</h1>
+        <h2>Gestão de Usuários | Consultar</h2>
+
+        <br />
+
+        
+</main>
+
+<footer class="navbar bottom navbar-light bg-light text-center">
+      <!-- Copyright -->
+      <div class="container-fluid p-3" id="footerAcesso">
+        <span class="text-center">&copy; A3 Initiative Corporation, 2022</span>
+      </div>
+      <!-- Copyright -->
+    </footer>
+
+    <script src="../js/valida.js"></script>
+    <script src="../js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+
+
 </body>
 </html>

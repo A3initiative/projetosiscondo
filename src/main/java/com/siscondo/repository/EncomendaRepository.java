@@ -1,5 +1,5 @@
 package com.siscondo.repository;
 
-public class EncomendaRepository {
+public class EncomendaRepository{
 
 }

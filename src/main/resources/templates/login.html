@@ -22,9 +22,8 @@
         />
       </nav>   
     	
-        <form
-          class="col-md-4 position-absolute top-50 start-50 translate-middle"
-          id="formAcesso"
+        <form class="col-md-4 position-absolute top-50 start-50 translate-middle"
+          id="formAcesso" method="POST"
         >
           <fieldset>
             <legend>Acesso SisCondo</legend>
@@ -32,7 +31,7 @@
               <div class="mb-3">
                 <label for="loginAcesso" class="form-label">Login:</label>
                 <input
-                  type="email"
+                  type="email" required
                   class="form-control"
                   id="loginAcesso"
                   placeholder="Informe seu login"
@@ -44,7 +43,7 @@
               <div class="mb-3">
                 <label for="senhaAcesso" class="form-label">Senha:</label>
                 <input
-                  type="password"
+                  type="password" required
                   class="form-control"
                   id="senhaAcesso"
                   placeholder="Informe sua senha"
@@ -58,7 +57,9 @@
               </div>
               <br />
               <div class="col-12">
-                <a href="index" id="botaoAcesso" class="btn btn-primary">Acessar</a>
+            <input type="submit" class="btn btn-primary" value="Acessar"></input>
+            <br /><br />
+                <a href="home" id="botaoAcesso" class="btn btn-primary">Acessar Sistema</a>
               </div>
             </div>
           </fieldset>
