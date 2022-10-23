@@ -11,32 +11,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.siscondo.model.Pessoa;
-import com.siscondo.service.PessoaService;
+import com.siscondo.model.Morador;
+import com.siscondo.service.MoradorService;
 
 @Controller
-public class PessoaBDController {
+public class MoradorBDController {
     
     @Autowired
-    private PessoaService pessoaService;
+    private MoradorService moradorService;
 
-    @RequestMapping(value = "/registrar_usuario", method = RequestMethod.GET)
+    @RequestMapping(value = "/insert", method = RequestMethod.GET)
 
     public ModelAndView insert() {
 
-        return new ModelAndView("insert", "pessoa", new Pessoa());
+        return new ModelAndView("insert", "morador", new Morador());
 
     }
 
-    @RequestMapping(value = "/registrar_usuario", method = RequestMethod.POST)
+    @RequestMapping(value = "/insert", method = RequestMethod.POST)
 
-    public String submitInsert(@Valid @ModelAttribute("pessoa")Pessoa pessoa, BindingResult result, ModelMap model) {
+    public String submitInsert(@Valid @ModelAttribute("morador")Morador morador, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
             return "error";
         }
 
-        pessoaService.insertPessoa(pessoa);
+        moradorService.insertMorador(morador);
 
         return "home";
 

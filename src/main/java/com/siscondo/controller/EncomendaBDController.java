@@ -11,35 +11,35 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.siscondo.model.Pessoa;
-import com.siscondo.service.PessoaService;
+import com.siscondo.model.Encomenda;
+import com.siscondo.service.EncomendaService;
 
 @Controller
-public class PessoaBDController {
+public class EncomendaBDController {
     
-    @Autowired
-    private PessoaService pessoaService;
-
-    @RequestMapping(value = "/registrar_usuario", method = RequestMethod.GET)
+    @Autowired(required = false)
+    private EncomendaService encomendaService;
+    
+    @RequestMapping(value = "/registrar_encomenda", method = RequestMethod.GET)
 
     public ModelAndView insert() {
 
-        return new ModelAndView("insert", "pessoa", new Pessoa());
+        return new ModelAndView("insertencomenda", "encomenda", new Encomenda());
 
     }
 
-    @RequestMapping(value = "/registrar_usuario", method = RequestMethod.POST)
+    @RequestMapping(value = "/registrar_encomenda", method = RequestMethod.POST)
 
-    public String submitInsert(@Valid @ModelAttribute("pessoa")Pessoa pessoa, BindingResult result, ModelMap model) {
+    public String submitInsert(@Valid @ModelAttribute("encomenda")Encomenda encomenda, BindingResult result, ModelMap model) {
 
         if (result.hasErrors()) {
             return "error";
         }
 
-        pessoaService.insertPessoa(pessoa);
+        encomendaService.insertEncomenda(encomenda);
 
         return "home";
 
     }
-
+    
 }

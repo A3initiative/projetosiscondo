@@ -65,7 +65,7 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Gestão de encomendas
+                    Gestão de Encomendas
                   </a>
                   <ul
                     class="dropdown-menu"
@@ -147,13 +147,13 @@
               class="form-select"
               onchange="exibeCampos()">
               <option selected>Selecione o perfil</option>
-              <option value="Morador(a)" onchange="exibeCampos()">
+              <option value="Mor" onchange="exibeCampos()">
                 Morador(a)
               </option>
-              <option value="Mensageiro(a)" onchange="exibeCampos()">
+              <option value="Men" onchange="exibeCampos()">
                 Mensageiro(a)
               </option>
-              <option value="Supervisor(a)" onchange="exibeCampos()">
+              <option value="Sup" onchange="exibeCampos()">
                 Supervisor(a)
               </option>
             </select>
@@ -206,43 +206,43 @@
             <label for="selectResponsavel" class="form-label"
               >Morador(a) Responsável</label
             >
-            <select id="selectResponsavel" class="form-select">
+            <select id="selectResponsavel" class="form-select" name="moradorResponsavel">
               <option selected>Selecione</option>
-              <option value="sim">Sim</option>
-              <option value="nao">Não</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
             </select>
           </div>
           <div class="col-md-3" id="blocoMorador">
             <label for="selectBloco" class="form-label">Bloco</label>
-            <select id="selectBloco" class="form-select">
+            <select id="selectBloco" class="form-select" name="bloco">
               <option selected>Selecione o bloco</option>
-              <option>Bloco 1</option>
-              <option>Bloco 2</option>
-              <option>Bloco 3</option>
+              <option value="1">Bloco 1</option>
+              <option value="2">Bloco 2</option>
+              <option value="3">Bloco 3</option>
             </select>
           </div>
           <div class="col-md-3" id="andarMorador">
             <label for="selectBloco" class="form-label">Andar</label>
-            <select id="selectBloco" class="form-select">
+            <select id="selectBloco" class="form-select" name="andar">
               <option selected>Selecione o andar</option>
-              <option>1º andar</option>
-              <option>2º andar</option>
-              <option>3º andar</option>
+              <option value="1">1º andar</option>
+              <option value="2">2º andar</option>
+              <option value="3">3º andar</option>
             </select>
           </div>
           <div class="col-md-3" id="unidadeMorador">
             <label for="selectUnidade" class="form-label">Unidade</label>
-            <select id="selectUnidade" class="form-select">
+            <select id="selectUnidade" class="form-select" name="unidade">
               <option selected>Selecione a unidade</option>
-              <option>Unidade A</option>
-              <option>Unidade B</option>
-              <option>Unidade C</option>
+              <option value="A">Unidade A</option>
+              <option value="B">Unidade B</option>
+              <option value="C">Unidade C</option>
             </select>
           </div>
-          <div class="col-md-3" id="matriculaMensageiro">
+          <div class="col-md-3" id="matricula">
             <label for="inputMatricula" class="form-label">Matrícula</label>
             <input
-              type="text"
+              type="text" name="matricula"
               class="form-control"
               id="inputMatricula"
               aria-describedby="matriculaHelp"
