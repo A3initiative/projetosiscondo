@@ -90,7 +90,7 @@ public class Encomenda {
         this.volumeGrande = volumeGrande;
     }  
     
-    @Column(name = "nome_imagem_etiqueta", nullable = false)
+    @Column(name = "nome_imagem_etiqueta", nullable = true)
     public String getNomeImagemEtiqueta() {
         return nomeImagemEtiqueta;
     }
@@ -100,7 +100,7 @@ public class Encomenda {
     } 
     
     @Lob
-    @Column(name="imagem_etiqueta", nullable=true)
+    @Column(name="imagem_etiqueta", nullable = true)
     private byte[] image;
     public byte[] getImagemEtiqueta() {
         return imagemEtiqueta;

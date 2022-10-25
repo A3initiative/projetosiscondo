@@ -86,7 +86,8 @@ public class Pessoa{
     @Override
     public String toString() {
         //return "Pessoa [id=" + id + ", Nome=" + nome + ", E-mail=" + email + ", Telefone=" + telefone + ", Senha=" + senha + "]";
-        return "Nome: " + nome + " - E-mail: " + email + " - Telefone: " + telefone;
+        //+ "; E-mail: " + email + "; Telefone: " + telefone
+        return "Nome: " + nome ;
     }
 
 }

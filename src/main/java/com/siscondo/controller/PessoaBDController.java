@@ -15,7 +15,7 @@ import com.siscondo.model.Pessoa;
 import com.siscondo.service.PessoaService;
 
 @Controller
-public class PessoaBDController {
+public class PessoaBDController{
     
     @Autowired
     private PessoaService pessoaService;
@@ -37,6 +37,9 @@ public class PessoaBDController {
         }
 
         pessoaService.insertPessoa(pessoa);
+        
+        EmailController email = new EmailController();
+        email.enviaEmail(email); 
 
         return "home";
 

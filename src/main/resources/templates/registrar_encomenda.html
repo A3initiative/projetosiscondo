@@ -7,6 +7,7 @@
     <title>SisCondo | Manter Encomenda | Registrar</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
     <link href="../css/bootstrap.min.css" rel="stylesheet" />  
+    <link href="../css/camera.css" rel="stylesheet" />  
     <link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
   </head>
   <body>
@@ -138,27 +139,27 @@
 
         <form class="row g-3" id="formManterEncomenda" action="/registrar_encomenda" method="POST" modelAttribute="encomenda">          
           <div class="col-md-3">
-            <label for="selectBloco" class="form-label">Bloco</label>
-            <select id="selectBloco" class="form-select" name="bloco">
-              <option selected>Selecione o bloco</option>
+            <label for="selectBloco" class="form-label">Bloco*</label>
+            <select id="selectBloco" class="form-select" name="bloco" required>
+              <option selected value="">Selecione o bloco</option>
               <option value="1">Bloco 1</option>
               <option value="2">Bloco 2</option>
               <option value="3">Bloco 3</option>
             </select>
           </div>
           <div class="col-md-3">
-            <label for="selectUnidade" class="form-label">Andar</label>
-            <select id="selectUnidade" class="form-select" name="andar">
-              <option selected>Selecione o andar</option>
+            <label for="selectUnidade" class="form-label">Andar*</label>
+            <select id="selectUnidade" class="form-select" name="andar" required>
+              <option selected value="">Selecione o andar</option>
               <option value="1">1º andar</option>
               <option value="2">2º andar</option>
               <option value="3">3º andar</option>
             </select>
           </div>
           <div class="col-md-3">
-            <label for="selectUnidade" class="form-label">Unidade</label>
-            <select id="selectUnidade" class="form-select" name="unidade">
-              <option selected>Selecione a unidade</option>
+            <label for="selectUnidade" class="form-label">Unidade*</label>
+            <select id="selectUnidade" class="form-select" name="unidade" required>
+              <option selected value="">Selecione a unidade</option>
               <option value="A">A</option>
               <option value="B">B</option>
               <option value="C">C</option>
@@ -166,9 +167,9 @@
           </div>
 
           <div class="col-md-10">
-            <label for="selectNomeMorador" class="form-label">Nome do(a) morador(a)</label>
-            <select id="selectNomeMorador" class="form-select" name="nomeMorador">
-              <option selected>Selecione o morador</option>
+            <label for="selectNomeMorador" class="form-label">Nome do(a) morador(a)*</label>
+            <select id="selectNomeMorador" class="form-select" name="nomeMorador" required>
+              <option selected value="">Selecione o(a) morador(a)</option>
               <option value="Ana">Ana</option>
               <option value="André">André</option>
               <option value="Araújo">Araújo</option>
@@ -194,12 +195,26 @@
               <label for="formFile" class="form-label"
                 >Imagem da etiqueta da encomenda</label
               >
-              <input class="form-control" type="file" id="formFile" name="nomeImagemEtiqueta" />
+              <!-- <input class="form-control" type="file" id="formFile" name="nomeImagemEtiqueta" /> -->
+              	
+				<div class="contentarea">
+  
+				  <div class="camera">
+				    <video id="video">Video stream not available.</video>
+				    <button id="startbutton">Registrar Imagem da Etiqueta</button>
+				  </div>
+				  <canvas id="canvas"> </canvas>
+				  <div class="output">
+				    <img id="photo" alt="A captura da imagem seráa exibida neste box." />
+				  </div>
+				</div>
+
+
             </div>
           </div>
 
           <div id="helpCampos" class="form-text">
-            Todos os campos são de preenchimento obrigatório.
+            * Campos com preenchimento obrigatório.
           </div>
 
           <div class="col-12">  
@@ -220,6 +235,6 @@
     
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-
+	<script src="../js/camera.js"></script>
 </body>
 </html>

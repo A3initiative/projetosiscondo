@@ -141,12 +141,12 @@
 
         <form class="row g-3" id="formRegistrarUsuario" action="/registrar_usuario" method="POST" modelAttribute="pessoa">
           <div class="col-md-6">
-            <label for="selectPerfil" class="form-label">Perfil</label>
+            <label for="selectPerfil" class="form-label">Perfil*</label>
             <select
-              id="selectPerfil" name="perfil"
+              id="selectPerfil" name="perfil" required
               class="form-select"
               onchange="exibeCampos()">
-              <option selected>Selecione o perfil</option>
+              <option selected value="">Selecione o perfil</option>
               <option value="Mor" onchange="exibeCampos()">
                 Morador(a)
               </option>
@@ -173,7 +173,7 @@
           </div>
           <div class="col-md-3">
             <label for="inputTelefoneUsuario" class="form-label"
-              >Telefone de contato</label
+              >Telefone de contato*</label
             >
             <input name="telefone" required  
               type="tel"
@@ -183,7 +183,7 @@
             />
           </div>
           <div class="col-md-4">
-            <label for="inputEmailUsuario" class="form-label">E-mail</label>
+            <label for="inputEmailUsuario" class="form-label">E-mail*</label>
             <input name="email" required 
               type="email"
               class="form-control"
@@ -192,7 +192,7 @@
             />
           </div>
           <div class="col-md-3">
-            <label for="inputSenhaUsuario" class="form-label">Senha</label>
+            <label for="inputSenhaUsuario" class="form-label">Senha*</label>
             <input name="senha" required 
               type="password"
               class="form-control"
@@ -250,7 +250,7 @@
           </div>
 
           <div id="helpCampos" class="form-text">
-            Todos os campos são de preenchimento obrigatório.
+            *Campos com preenchimento obrigatório.
           </div>
 
           <div class="col-12">
