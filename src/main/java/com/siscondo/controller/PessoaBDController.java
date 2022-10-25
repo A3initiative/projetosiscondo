@@ -39,7 +39,7 @@ public class PessoaBDController{
         pessoaService.insertPessoa(pessoa);
         
         EmailController email = new EmailController();
-        email.enviaEmail(email); 
+        email.enviaEmail(pessoa.getEmail(), pessoa.getNome(), pessoa.getSenha(), pessoa.getPerfil()); 
 
         return "home";
 

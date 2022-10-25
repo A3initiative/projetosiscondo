@@ -13,7 +13,7 @@ public class Pessoa{
 	
 	private long id;
     private String nome;
-    private String email;
+    protected String email;
     private String telefone;
     private String senha;
     private String perfil;
