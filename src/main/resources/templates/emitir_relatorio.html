@@ -26,7 +26,7 @@
 	<br>
 
 	<div class="container-fluid text-center">
-        Olá, supervisor(a) Admin! 
+        Olá, supervisor(a)! 
         <a href="login">Sair</a>
       </div>
       
@@ -63,7 +63,7 @@
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Gestão de encomendas
+                    Gestão de Encomendas
                   </a>
                   <ul
                     class="dropdown-menu"
@@ -148,33 +148,32 @@
               </div>   
 
           <div class="col-md-3">
-            <label for="selectBloco" class="form-label">Prazo de guarda</label>
+            <label for="selectBloco" class="form-label">Volume ultrapassa limite:</label>
             <select id="selectBloco" class="form-select">
-              <option selected>Selecione o prazo de guarda</option>
-              <option>Prazo de 2 dias úteis expirado</option>
-              <option>Prazo de 5 dias úteis expirado</option>
-              <option>Listar Todos</option>
+              <option selected value="">Selecione a opção</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
             </select>
           </div>          
 
           <div class="col-md-2">
             <label for="selectBloco" class="form-label">Bloco</label>
             <select id="selectBloco" class="form-select">
-              <option selected>Selecione o bloco</option>
-              <option>Bloco 1</option>
-              <option>Bloco 2</option>
-              <option>Bloco 3</option>       
-              <option>Listar Todos</option>
+              <option selected value="">Selecione o bloco</option>
+              <option value="1">Bloco 1</option>
+              <option value="2">Bloco 2</option>
+              <option value="3">Bloco 3</option> 
             </select>
           </div>          
 
           <div class="col-md-3">
             <label for="selectBloco" class="form-label">Situação</label>
             <select id="selectBloco" class="form-select">
-              <option selected>Selecione a situação</option>
-              <option>Disponível para retirar</option>
-              <option>Encomendas retiradas</option>
-              <option>Listar Todos</option>
+              <option selected value="">Selecione a situação</option>
+              <option value="1">Recebida</option>
+              <option value="2">Entregue</option>
+              <option value="3">Expirada</option>
+              <option value="4">Inativa</option>
             </select>
           </div>
 
@@ -190,29 +189,15 @@
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Encomendas disponíveis para retirar</strong></div>
+            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Encomendas disponíveis na Mensageria para retirar</strong></div>
             <div class="card-body">
               <h5 class="card-title">Situação: Encomenda na Mensageria disponível para retirar</h5>
-              <h6 class="card-title">Lista:</h6>
               <div th:each="pessoa : ${pessoa}">
               <p>Nome: <span th:text="${pessoa.nome}"></span></p>
               <p>E-mail: <span th:text="${pessoa.email}"></span></p>
               <p>Telefone: <span th:text="${pessoa.telefone}"></span></p>
               </div>
-              <span th:text="${listaPessoas}"></span>   
-              
-              <table border="1">              
-            	<tr>
-            	<th>Nome</th>
-            	<th>E-mail</th>
-            	<th>Telefone</th>
-            	</tr>
-            	<tr>
-                	<td>Nome teste</td>
-                	<td>E-mail teste</td>
-                	<td>21-99999-9999</td>
-            	</tr>
-              </table>
+              <span th:text="${listaPessoas}"></span> 
               
               <p class="card-text">     
                 Apartamento: Bloco 1 - Unidade 101<br />
@@ -265,7 +250,7 @@
       </div>
       <!-- Copyright -->
     </footer>
-s
+
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
 

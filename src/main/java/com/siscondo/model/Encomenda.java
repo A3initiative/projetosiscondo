@@ -20,12 +20,13 @@ public class Encomenda {
     private int volumeGrande;
     private String nomeImagemEtiqueta;
     private byte[] imagemEtiqueta;
+    private int estado = 1;
 
     public Encomenda() {
           
     }
  
-    public Encomenda(String bloco, String andar, String unidade, String nomeMorador, int volumeGrande, String nomeImagemEtiqueta, byte[] imagemEtiqueta) {
+    public Encomenda(String bloco, String andar, String unidade, String nomeMorador, int volumeGrande, String nomeImagemEtiqueta, byte[] imagemEtiqueta, int estado) {
          this.bloco = bloco;
          this.andar = andar;
          this.unidade = unidade;
@@ -33,6 +34,7 @@ public class Encomenda {
          this.volumeGrande = volumeGrande;
          this.nomeImagemEtiqueta = nomeImagemEtiqueta;
          this.imagemEtiqueta = imagemEtiqueta;
+         this.estado = estado;
     }
     
     @Id
@@ -108,6 +110,29 @@ public class Encomenda {
 
     public void setImagemEtiqueta(byte[] imagemEtiqueta) {
         this.imagemEtiqueta = imagemEtiqueta;
-    }  
+    }      
+
+    @Column(name = "estado", nullable = true)
+    public int getEstado() {
+        return estado;
+    }
+
+    public void setEstado(int estado) {
+        this.estado = estado;
+    }
+    
+    @Override
+    public String toString() {
+        
+        String textoVolumeGrande = null;
+        
+        if (volumeGrande == 0) {
+            textoVolumeGrande = "Não";  
+        } else if (volumeGrande == 1) {
+            textoVolumeGrande = "Sim";             
+        }
+        
+        return "Volume Grande: " + textoVolumeGrande;  
+    }
 
 }

@@ -20,7 +20,7 @@ public class MoradorBDController {
     @Autowired
     private MoradorService moradorService;
 
-    @RequestMapping(value = "/insert", method = RequestMethod.GET)
+    @RequestMapping(value = "/insertmorador", method = RequestMethod.GET)
 
     public ModelAndView insert() {
 
@@ -28,7 +28,7 @@ public class MoradorBDController {
 
     }
 
-    @RequestMapping(value = "/insert", method = RequestMethod.POST)
+    @RequestMapping(value = "/insertmorador", method = RequestMethod.POST)
 
     public String submitInsert(@Valid @ModelAttribute("morador")Morador morador, BindingResult result, ModelMap model) {
 
