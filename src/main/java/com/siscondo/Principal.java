@@ -16,7 +16,7 @@ public class Principal {
     private PessoaRepository pessoaRepository;
     
     @Autowired
-    private EncomendaRepository encomendaRepository;
+    private EncomendaRepository encomendaRepository; 
 	
 	@RequestMapping("/projetosiscondo/home")
 	public String home(){
@@ -45,10 +45,10 @@ public class Principal {
         return "alterar_encomenda";
     }
 	
-	@RequestMapping(value="/projetosiscondo/registrar_encomenda")
+	/*@RequestMapping(value="/projetosiscondo/registrar_encomenda")
 	public String registrarEncomenda(){
 		return "registrar_encomenda";
-	}
+	}*/
     
 	//USUÁRIO
 	
@@ -73,10 +73,24 @@ public class Principal {
          return "emitir_relatorio";
      }
 	 
+	 @GetMapping("/projetosiscondo/registrar_encomenda")
+     public String registrarEncomenda(Model model) {
+         model.addAttribute("listaMoradores", pessoaRepository.findAll());
+         return "registrar_encomenda";
+     }
+	 
 	 @GetMapping("/projetosiscondo/consultar_encomenda")
      public String consultarEncomenda(Model model) {
          model.addAttribute("buscaNomePessoa", pessoaRepository.findById((long) 77).orElse(null));
          model.addAttribute("buscaVolumeGrande", encomendaRepository.findById((long) 2).orElse(null));
+         model.addAttribute("listaMoradores", pessoaRepository.findAll());
          return "consultar_encomenda";
      }
+	 
+	  /*@RequestMapping(value = "/projetosiscondo/registrar_encomenda")
+	  public String listaNomeMorador(Model model) {
+	      model.addAttribute("listaNomeMorador", pessoaRepository.findById((long) 75).orElse(null));
+	      //model.addAttribute("listaNomeMorador", pessoaRepository.findAll());
+	      return "registrar_encomenda";
+	  }*/
 }

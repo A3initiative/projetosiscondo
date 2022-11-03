@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -167,28 +167,35 @@
           </div>
 
           <div class="col-md-10">
-            <label for="selectNomeMorador" class="form-label">Nome do(a) morador(a)*</label>
-            <select id="selectNomeMorador" class="form-select" name="nomeMorador" required>
-              <option selected value="">Selecione o(a) morador(a)</option>
-              <option value="Ana">Ana</option>
-              <option value="André">André</option>
-              <option value="Araújo">Araújo</option>
-              <option value="João">João</option>
-              <option value="José">José</option>
-              <option value="Maria">Maria</option>
-              <option value="Mauro">Mauro</option>
-              <option value="Não especificado">Não especificado</option>
-            </select>
+            <label for="selectNomeMorador" class="form-label">Nome do(a) morador(a)*</label>            
+            <select name="nomeMorador" class="form-select" required>             
+			  <option selected value="">Selecione o(a) morador(a)</option> 
+			  <option th:each="morador : ${listaMoradores}" th:value="${morador.nome}" th:text="${morador.nome}"></option>
+			</select>
+			
+          </div>
+          
+          <div class="col-md-4">
+            <label for="selectEstado" class="form-label">Estado da encomenda*</label>
+            
+          <select name="estado" class="form-select" required> 
+			   		<option selected value="">Selecione o estado</option>
+			       	<option value="1">Recebida</option>   
+			       	<option value="2">Entregue</option>   
+			       	<option value="3">Expirada</option>   
+			       	<option value="4">Inativa</option> 
+			</select>
           </div>
 
-          <div class="col-md-6">            
+          <div class="col-md-6"> 
+          	<label for="selectEstado" class="form-label">Volume da encomenda*</label>           
             <div class="form-check">
               <input class="form-check-input" type="checkbox" value="1" id="checkVolume" name="volumeGrande">
               <label class="form-check-label" for="checkVolume">
                 Encomenda ultrapassa limite de volume
               </label>
             </div>
-          </div>
+          </div>          
 
           <div class="col-12">
             <div class="mb-3">
@@ -217,7 +224,8 @@
             * Campos com preenchimento obrigatório.
           </div>
 
-          <div class="col-12">  
+          <div class="col-12">         
+            <button type="reset" class="btn btn-outline-secondary">Limpar</button>  
              <input type="submit" class="btn btn-primary" value="Registrar encomenda"></input>
             <br /><br />
           </div>

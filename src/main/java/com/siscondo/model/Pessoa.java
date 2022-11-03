@@ -87,7 +87,9 @@ public class Pessoa{
     public String toString() {
         //return "Pessoa [id=" + id + ", Nome=" + nome + ", E-mail=" + email + ", Telefone=" + telefone + ", Senha=" + senha + "]";
         //+ "; E-mail: " + email + "; Telefone: " + telefone
-        return "Nome: " + nome ;
+        return nome ;
     }
+    
+    
 
 }

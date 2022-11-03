@@ -27,7 +27,7 @@ public class PessoaController {
 	
 	 @Autowired
 	 private PessoaRepository pessoaRepository;
-
+	 
 	 // get pessoas	
 	 @GetMapping("/pessoas")
      public List<Pessoa> getAllPessoas() {
@@ -78,6 +78,7 @@ public class PessoaController {
 	        Map<String, Boolean> response = new HashMap<>();
 	        response.put("deleted", Boolean.TRUE);
 	        return response;
-	    }
+	    }    
+	    
 
 }

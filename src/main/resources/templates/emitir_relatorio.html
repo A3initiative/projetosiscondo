@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
 <meta charset="ISO-8859-1">
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -145,16 +145,7 @@
               <div class="col-md-2">                  
                 <label for="periodoFinal" class="form-label">Período Final</label>
                 <input class="form-control me-2" type="date" placeholder="Período Final" aria-label="Período Final">
-              </div>   
-
-          <div class="col-md-3">
-            <label for="selectBloco" class="form-label">Volume ultrapassa limite:</label>
-            <select id="selectBloco" class="form-select">
-              <option selected value="">Selecione a opção</option>
-              <option value="1">Sim</option>
-              <option value="0">Não</option>
-            </select>
-          </div>          
+              </div>    
 
           <div class="col-md-2">
             <label for="selectBloco" class="form-label">Bloco</label>
@@ -164,12 +155,21 @@
               <option value="2">Bloco 2</option>
               <option value="3">Bloco 3</option> 
             </select>
-          </div>          
+          </div>    
 
           <div class="col-md-3">
-            <label for="selectBloco" class="form-label">Situação</label>
+            <label for="selectBloco" class="form-label">Volume ultrapassa limite</label>
             <select id="selectBloco" class="form-select">
-              <option selected value="">Selecione a situação</option>
+              <option selected value="">Selecione a opção</option>
+              <option value="1">Sim</option>
+              <option value="0">Não</option>
+            </select>
+          </div>               
+
+          <div class="col-md-3">
+            <label for="selectEstado" class="form-label">Estado</label>
+            <select id="selectEstado" class="form-select">
+              <option selected value="">Selecione o estado</option>
               <option value="1">Recebida</option>
               <option value="2">Entregue</option>
               <option value="3">Expirada</option>
@@ -189,20 +189,32 @@
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Encomendas disponíveis na Mensageria para retirar</strong></div>
+            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Usuários cadastrados</strong></div>
             <div class="card-body">
-              <h5 class="card-title">Situação: Encomenda na Mensageria disponível para retirar</h5>
-              <div th:each="pessoa : ${pessoa}">
-              <p>Nome: <span th:text="${pessoa.nome}"></span></p>
-              <p>E-mail: <span th:text="${pessoa.email}"></span></p>
-              <p>Telefone: <span th:text="${pessoa.telefone}"></span></p>
-              </div>
-              <span th:text="${listaPessoas}"></span> 
+              <h5 class="card-title"></h5>
+              <div>
               
-              <p class="card-text">     
-                Apartamento: Bloco 1 - Unidade 101<br />
-                Recebida em: 18/06/2022              
-              </p>
+              <table border="1">
+            	<tr>
+                	<th>Id</th>
+                	<th>Nome</th>
+                	<th>E-mail</th>
+                	<th>Telefone</th>
+                	<th>Perfil</th>
+            	</tr>     
+            	<tr th:each="pessoa : ${listaPessoas}">
+                	<td th:text="${pessoa.id}">Id</td>
+                	<td th:text="${pessoa.nome}">Nome</td>
+                	<td th:text="${pessoa.email}">E-mail</td>
+                	<td th:text="${pessoa.telefone}">Telefone</td>
+                	<td th:text="${pessoa.perfil}">Perfil</td>
+            	</tr>
+        		</table>
+              
+              </div>
+              
+              <br> 
+             
               <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
@@ -211,7 +223,7 @@
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomendas retiradas</strong></div>
+            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomenda disponível para retirar / Encomenda retirada</strong></div>
             <div class="card-body">
               <h5 class="card-title">Situação: Encomenda retirada</h5>
               <p class="card-text"> 

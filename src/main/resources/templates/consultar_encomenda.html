@@ -136,17 +136,30 @@
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Encomendas na Mensageria disponíveis para retirar</strong></div>
+            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Moradores cadastrados</strong></div>
             <div class="card-body">
               
-              <span th:text="${buscaNomePessoa}"></span> 
+              <!-- 
+				Nome: <span th:text="${buscaNomePessoa}"></span> 
               <br />
               <span th:text="${buscaVolumeGrande}"></span> 
+              -->
               
-              <p class="card-text">     
-                Apartamento: Bloco 1 - Unidade 101<br />
-                Recebida em: 18/06/2022              
-              </p>
+              <table border="1">
+            	<tr>
+                	<th>Nome</th>
+                	<th>E-mail</th>
+                	<th>Telefone</th>
+            	</tr>     
+            	<tr th:each="pessoa : ${listaMoradores}">
+                	<td th:text="${pessoa.nome}">Nome</td>
+                	<td th:text="${pessoa.email}">E-mail</td>
+                	<td th:text="${pessoa.telefone}">Telefone</td>
+            	</tr>
+        		</table>
+              	
+              	<br>
+              
               <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
@@ -155,7 +168,7 @@
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomendas retiradas</strong></div>
+            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomenda disponível para retirada / Encomenda retirada</strong></div>
             <div class="card-body">
               <h5 class="card-title">Situação: Encomenda retirada</h5>
               <p class="card-text"> 

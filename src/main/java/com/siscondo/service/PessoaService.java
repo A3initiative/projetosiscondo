@@ -8,6 +8,7 @@ import com.siscondo.model.Pessoa;
 public interface PessoaService {
     Optional<Pessoa> getPessoaById(Long id);
     List<Pessoa> getAllPessoas();
+    List<Pessoa> findAll();
     void deleteAllPessoa();
     void deletePessoaById(Long id);
     void updatePessoaById(Long id, Pessoa pessoa);
