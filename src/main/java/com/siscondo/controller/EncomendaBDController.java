@@ -37,6 +37,9 @@ public class EncomendaBDController {
         }
 
         encomendaService.insertEncomenda(encomenda);
+        
+        EmailController email = new EmailController();
+        email.enviaEmailEncomenda("anamariasilva.email@gmail.com", encomenda.getNomeMorador()); 
 
         return "home";
 

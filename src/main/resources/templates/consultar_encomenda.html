@@ -139,19 +139,13 @@
             <div class="card-header" id="cardEncomendasDisponiveis"><strong>Moradores cadastrados</strong></div>
             <div class="card-body">
               
-              <!-- 
-				Nome: <span th:text="${buscaNomePessoa}"></span> 
-              <br />
-              <span th:text="${buscaVolumeGrande}"></span> 
-              -->
-              
               <table border="1">
             	<tr>
-                	<th>Nome</th>
+                	<th>Nome do(a) Morador(a)</th>
                 	<th>E-mail</th>
                 	<th>Telefone</th>
             	</tr>     
-            	<tr th:each="pessoa : ${listaMoradores}">
+            	<tr th:each="pessoa : ${listaMoradores}" th:if="${pessoa.perfil} == 'Mor'">
                 	<td th:text="${pessoa.nome}">Nome</td>
                 	<td th:text="${pessoa.email}">E-mail</td>
                 	<td th:text="${pessoa.telefone}">Telefone</td>

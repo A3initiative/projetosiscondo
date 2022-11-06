@@ -133,29 +133,29 @@
         <div class="card-group">
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Moradores</h5>
-      <p class="card-text">Total de usuários moradores cadastrados:</p>
+      <h5 class="card-title">Bem-vindo(a) ao SisCondo!</h5>
+      <p class="card-text"></p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Atualização em: </small>
+      <small class="text-muted"><span id="dataHora"></span></small>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Usuários</h5>
-      <p class="card-text">Total de usuários cadastrados: </p>
+      <p class="card-text"></p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Atualização em: </small>
+      <small class="text-muted">Total de usuários cadastrados: <span th:text="${qtdUsuarios}"></span></small>
     </div>
   </div>
   <div class="card">
     <div class="card-body">
-      <h5 class="card-title">Encomendas registradas</h5>
-      <p class="card-text">Total de encomendas registradas: </p>
+      <h5 class="card-title">Encomendas</h5>
+      <p class="card-text"></p>
     </div>
     <div class="card-footer">
-      <small class="text-muted">Atualização em: </small>
+      <small class="text-muted">Total de encomendas registradas: <span th:text="${qtdEncomendas}"></span></small>
     </div>
   </div>
 </div>
@@ -179,6 +179,6 @@
     
 <script src="../js/bootstrap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-  
+<script src="../js/scripts.js"></script>  
 </body>
 </html>
