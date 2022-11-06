@@ -37,7 +37,6 @@ public class Principal {
     public String qtdUsuarios(Model model) {
         model.addAttribute("qtdUsuarios", pessoaRepository.count());
         model.addAttribute("qtdEncomendas", encomendaRepository.count());
-        //model.addAttribute("qtdEncomendasExpiradas", encomendaRepository.findAll());
         return "home";
     }
 	
@@ -64,7 +63,14 @@ public class Principal {
         model.addAttribute("buscaNomePessoa", pessoaRepository.findById((long) 77).orElse(null));
         model.addAttribute("buscaVolumeGrande", encomendaRepository.findById((long) 2).orElse(null));
         model.addAttribute("listaEncomendas", encomendaRepository.findAll());
+        model.addAttribute("qtdEncomendas", encomendaRepository.count());
         return "consultar_encomenda";
+    }
+    
+    @GetMapping("/projetosiscondo/alterar_encomenda")
+    public String alterarEncomenda(Model model) {
+        model.addAttribute("listaEncomendasRegistradas", encomendaRepository.findAll());
+        return "alterar_encomenda";
     }
     
 	//USUÁRIO
@@ -88,6 +94,7 @@ public class Principal {
 	 @GetMapping("/projetosiscondo/emitir_relatorio")
      public String emitirRelatorio(Model model) {
          model.addAttribute("listaPessoas", pessoaRepository.findAll());
+         model.addAttribute("listaEncomendasRegistradas", encomendaRepository.findAll());
          return "emitir_relatorio";
      }
 }

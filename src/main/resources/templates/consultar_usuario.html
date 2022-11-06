@@ -169,6 +169,7 @@
                 	<th>Nome do(a) Usuário(a)</th>
                 	<th>E-mail</th>
                 	<th>Telefone</th>
+                	<th>Perfil</th>
             	</tr>     
             	<tr th:each="pessoa : ${listaMoradores}" th:if="${pessoa.perfil} != 'Mor'">
                 	<td th:text="${pessoa.nome}">Nome</td>

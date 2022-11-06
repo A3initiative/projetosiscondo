@@ -138,28 +138,48 @@
 
         <form class="row g-3" id="formEmitirRelatorio">
                       
-              <div class="col-md-2">
+              <!-- <div class="col-md-2">
                 <label for="periodoInicial" class="form-label">Período Inicial</label>
                 <input class="form-control me-2" type="date" placeholder="Período Inicial" aria-label="Período Inicial">
               </div>
               <div class="col-md-2">                  
                 <label for="periodoFinal" class="form-label">Período Final</label>
                 <input class="form-control me-2" type="date" placeholder="Período Final" aria-label="Período Final">
-              </div>    
-
-          <div class="col-md-2">
+              </div> -->
+              
+              <div class="col-md-2">
             <label for="selectBloco" class="form-label">Bloco</label>
-            <select id="selectBloco" class="form-select">
+            <select id="selectBloco" class="form-select" name="bloco">
               <option selected value="">Selecione o bloco</option>
               <option value="1">Bloco 1</option>
               <option value="2">Bloco 2</option>
               <option value="3">Bloco 3</option> 
             </select>
+          </div>       
+
+          <div class="col-md-2">
+            <label for="selectAndar" class="form-label">Andar</label>
+            <select id="selectAndar" class="form-select" name="andar">
+              <option selected value="">Selecione o andar</option>
+              <option value="1">1º andar</option>
+              <option value="2">2º andar</option>
+              <option value="3">3º andar</option> 
+            </select>
+          </div> 
+          
+          <div class="col-md-2">
+            <label for="selectUnidade" class="form-label">Unidade</label>
+            <select id="selectUnidade" class="form-select" name="unidade">
+              <option selected value="">Selecione a unidade</option>
+              <option value="A">Unidade A</option>
+              <option value="B">Unidade B</option>
+              <option value="C">Unidade C</option> 
+            </select>
           </div>    
 
           <div class="col-md-3">
             <label for="selectBloco" class="form-label">Volume ultrapassa limite</label>
-            <select id="selectBloco" class="form-select">
+            <select id="selectBloco" class="form-select" name="volumeGrande">
               <option selected value="">Selecione a opção</option>
               <option value="1">Sim</option>
               <option value="0">Não</option>
@@ -168,9 +188,9 @@
 
           <div class="col-md-3">
             <label for="selectEstado" class="form-label">Estado</label>
-            <select id="selectEstado" class="form-select">
+            <select id="selectEstado" class="form-select" name="estado">
               <option selected value="">Selecione o estado</option>
-              <option value="1">Recebida</option>
+              <option th:value="1">Recebida</option>
               <option value="2">Entregue</option>
               <option value="3">Expirada</option>
               <option value="4">Inativa</option>
@@ -223,33 +243,31 @@
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomenda disponível para retirar / Encomenda retirada</strong></div>
+            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Relatório Encomendas</strong></div>
             <div class="card-body">
-              <h5 class="card-title">Situação: Encomenda retirada</h5>
-              <p class="card-text"> 
-                Apartamento: Bloco 1 - Unidade 303<br />
-                Retirado por morador(a): Maria<br />
-                Recebida em: 15/06/2022<br />
-                Entregue em: 16/06/2022               
-              </p>
-              <a href="#" class="btn btn-primary">Mais informações</a>
+              <h5 class="card-title">Encomenda registradas</h5>
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Morador(a)</th>
+                	<th>Bloco</th>
+                	<th>Andar</th>
+                	<th>Unidade</th>
+                	<th>Volume Grande</th>
+            	</tr>     
+            	<tr th:each="encomenda : ${listaEncomendasRegistradas}">
+                	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
+                	<td th:text="${encomenda.bloco}">Bloco</td>
+                	<td th:text="${encomenda.andar}">Andar</td>
+                	<td th:text="${encomenda.unidade}">Unidade</td>
+                	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'">Volume Grande</td>
+            	</tr>
+        		</table>   
             </div>
-          </div>
+          </div>         
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Situação: Encomenda retirada</h5>
-              <p class="card-text">      
-                Recebida em: 13/06/2022<br />
-                Retirado por morador(a): José<br />
-                Apartamento: Bloco 1 - Unidade 202<br />
-                Entregue em: 13/06/2022 
-              </p>
-              <a href="#" class="btn btn-primary">Mais informações</a>
-            </div>
-          </div>
-
-          <br>
+          <br />
+          
           <button class="btn btn-primary" onClick="window.print()">Imprimir</button>
         </div>
       </div>

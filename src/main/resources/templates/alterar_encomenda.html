@@ -132,7 +132,36 @@
         <h1>SisCondo</h1>
         <h2 id="styleh2">Gestão de Encomendas | Alterar</h2>
 
-        <br />        
+        <br /> 
+        
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomendas</strong></div>
+            <div class="card-body">
+              <h5 class="card-title">Encomenda registradas</h5>
+              
+              <br />
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Morador(a)</th>
+                	<th>Bloco</th>
+                	<th>Andar</th>
+                	<th>Unidade</th>
+                	<th>Volume Grande</th>
+            	</tr>     
+            	<tr th:each="encomenda : ${listaEncomendasRegistradas}">
+                	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
+                	<td th:text="${encomenda.bloco}">Bloco</td>
+                	<td th:text="${encomenda.andar}">Andar</td>
+                	<td th:text="${encomenda.unidade}">Unidade</td>
+                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+            	</tr>
+        		</table>  
+        		
+        		<br />
+            </div>
+          </div>       
         
         
     </main>

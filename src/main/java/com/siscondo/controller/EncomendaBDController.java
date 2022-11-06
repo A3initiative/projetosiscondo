@@ -20,7 +20,7 @@ public class EncomendaBDController {
     @Autowired(required = false)
     private EncomendaService encomendaService;
     
-    @RequestMapping(value = "/registrar_encomenda", method = RequestMethod.GET)
+    @RequestMapping(value = "registrar_encomenda", method = RequestMethod.GET)
 
     public ModelAndView insert() {
 
@@ -28,7 +28,7 @@ public class EncomendaBDController {
 
     }
 
-    @RequestMapping(value = "/registrar_encomenda", method = RequestMethod.POST)
+    @RequestMapping(value = "registrar_encomenda", method = RequestMethod.POST)
 
     public String submitInsert(@Valid @ModelAttribute("encomenda")Encomenda encomenda, BindingResult result, ModelMap model) {
 
@@ -38,7 +38,8 @@ public class EncomendaBDController {
 
         encomendaService.insertEncomenda(encomenda);
         
-        EmailController email = new EmailController();
+        EmailController email = new EmailController(); 
+        
         email.enviaEmailEncomenda("anamariasilva.email@gmail.com", encomenda.getNomeMorador()); 
 
         return "home";

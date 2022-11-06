@@ -124,15 +124,7 @@ public class Encomenda {
     @Override
     public String toString() {
         
-        String textoVolumeGrande = null;
-        
-        if (volumeGrande == 0) {
-            textoVolumeGrande = "Não";  
-        } else if (volumeGrande == 1) {
-            textoVolumeGrande = "Sim";             
-        }
-        
-        return "Volume Grande: " + textoVolumeGrande;  
+        return "Estado: " + estado;
     }
 
 }

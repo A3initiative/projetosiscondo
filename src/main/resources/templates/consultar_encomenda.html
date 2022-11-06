@@ -155,13 +155,11 @@
                 	<td th:text="${encomenda.bloco}">Bloco</td>
                 	<td th:text="${encomenda.andar}">Andar</td>
                 	<td th:text="${encomenda.unidade}">Unidade</td>
-                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+                	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'">Volume Grande</td>
             	</tr>
-        		</table>   
+        		</table>  
         		
         		<br />
-
-              <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
 
@@ -184,13 +182,11 @@
                 	<td th:text="${encomenda.bloco}">Bloco</td>
                 	<td th:text="${encomenda.andar}">Andar</td>
                 	<td th:text="${encomenda.unidade}">Unidade</td>
-                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+                	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'">Volume Grande</td>
             	</tr>
-        		</table>   
+        		</table> 
         		
         		<br />
-        		
-              <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
           
@@ -213,13 +209,11 @@
                 	<td th:text="${encomenda.bloco}">Bloco</td>
                 	<td th:text="${encomenda.andar}">Andar</td>
                 	<td th:text="${encomenda.unidade}">Unidade</td>
-                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+                	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'">Volume Grande</td>
             	</tr>
-        		</table>   
+        		</table> 
         		
         		<br />
-        		
-              <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
           
@@ -242,16 +236,21 @@
                 	<td th:text="${encomenda.bloco}">Bloco</td>
                 	<td th:text="${encomenda.andar}">Andar</td>
                 	<td th:text="${encomenda.unidade}">Unidade</td>
-                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+                	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'"></td>
             	</tr>
         		</table>   
         		
-        		<br />
-        		
-              <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
-
+          
+          <br />
+          
+          <div class="card">
+            <div class="card-body">
+              Total de encomendas registradas: <span th:text="${qtdEncomendas}"></span>
+            </div>
+          </div>
+          
           <br />
           <button class="btn btn-primary" onClick="window.print()">Imprimir</button>
         </div>
