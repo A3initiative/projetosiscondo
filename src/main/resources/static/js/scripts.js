@@ -6,4 +6,4 @@ var horas = dataAtual.getHours();
 var minutos = dataAtual.getMinutes();
 var diaSemana = dataAtual.getDay() + 1;
 
-document.getElementById("dataHora").innerHTML = "Hoje é " + dia + "/" + mes + "/" + ano + ", " + horas + ":" + minutos + ".";
+document.getElementById("dataHora").innerHTML = "Hoje é " + dia + "/" + mes + "/" + ano + ", " + horas + "h" + minutos + ".";

@@ -63,14 +63,15 @@ public class Principal {
     public String consultarEncomenda(Model model) {
         model.addAttribute("buscaNomePessoa", pessoaRepository.findById((long) 77).orElse(null));
         model.addAttribute("buscaVolumeGrande", encomendaRepository.findById((long) 2).orElse(null));
-        model.addAttribute("listaMoradores", pessoaRepository.findAll());
+        model.addAttribute("listaEncomendas", encomendaRepository.findAll());
         return "consultar_encomenda";
     }
     
 	//USUÁRIO
 	
     @RequestMapping(value="/projetosiscondo/consultar_usuario")
-    public String consultarUsuario(){
+    public String consultarUsuario(Model model){
+        model.addAttribute("listaMoradores", pessoaRepository.findAll());
         return "consultar_usuario";
     }
     

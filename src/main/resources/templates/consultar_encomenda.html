@@ -132,63 +132,127 @@
         <h1>SisCondo</h1>
         <h2 id="styleh2">Gestão de Encomendas | Consultar</h2>
         
-        <br />
+        <br>        
 
         <div class="col-md-12">
           <div class="card">
-            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Moradores cadastrados</strong></div>
+            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomendas</strong></div>
             <div class="card-body">
+              <h5 class="card-title">Estado: Encomenda recebida</h5>
+              
+              <br />
               
               <table border="1">
             	<tr>
                 	<th>Nome do(a) Morador(a)</th>
-                	<th>E-mail</th>
-                	<th>Telefone</th>
+                	<th>Bloco</th>
+                	<th>Andar</th>
+                	<th>Unidade</th>
+                	<th>Volume Grande</th>
             	</tr>     
-            	<tr th:each="pessoa : ${listaMoradores}" th:if="${pessoa.perfil} == 'Mor'">
-                	<td th:text="${pessoa.nome}">Nome</td>
-                	<td th:text="${pessoa.email}">E-mail</td>
-                	<td th:text="${pessoa.telefone}">Telefone</td>
+            	<tr th:each="encomenda : ${listaEncomendas}" th:if="${encomenda.estado} == 1">
+                	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
+                	<td th:text="${encomenda.bloco}">Bloco</td>
+                	<td th:text="${encomenda.andar}">Andar</td>
+                	<td th:text="${encomenda.unidade}">Unidade</td>
+                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
             	</tr>
-        		</table>
-              	
-              	<br>
+        		</table>   
+        		
+        		<br />
+
+              <a href="#" class="btn btn-primary">Mais informações</a>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Estado: Encomenda entregue</h5>
               
+              <br />
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Morador(a)</th>
+                	<th>Bloco</th>
+                	<th>Andar</th>
+                	<th>Unidade</th>
+                	<th>Volume Grande</th>
+            	</tr>     
+            	<tr th:each="encomenda : ${listaEncomendas}" th:if="${encomenda.estado} == 2">
+                	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
+                	<td th:text="${encomenda.bloco}">Bloco</td>
+                	<td th:text="${encomenda.andar}">Andar</td>
+                	<td th:text="${encomenda.unidade}">Unidade</td>
+                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+            	</tr>
+        		</table>   
+        		
+        		<br />
+        		
               <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
-
-          <br>
-
-        <div class="col-md-12">
+          
           <div class="card">
-            <div class="card-header bg-light" id="cardHistoricoEncomendas"><strong>Encomenda disponível para retirada / Encomenda retirada</strong></div>
             <div class="card-body">
-              <h5 class="card-title">Situação: Encomenda retirada</h5>
-              <p class="card-text"> 
-                Apartamento: Bloco 1 - Unidade 303<br />
-                Retirado por morador(a): Maria<br />
-                Recebida em: 15/06/2022<br />
-                Entregue em: 16/06/2022               
-              </p>
+              <h5 class="card-title">Estado: Encomenda expirada</h5>
+              
+              <br />
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Morador(a)</th>
+                	<th>Bloco</th>
+                	<th>Andar</th>
+                	<th>Unidade</th>
+                	<th>Volume Grande</th>
+            	</tr>     
+            	<tr th:each="encomenda : ${listaEncomendas}" th:if="${encomenda.estado} == 3">
+                	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
+                	<td th:text="${encomenda.bloco}">Bloco</td>
+                	<td th:text="${encomenda.andar}">Andar</td>
+                	<td th:text="${encomenda.unidade}">Unidade</td>
+                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+            	</tr>
+        		</table>   
+        		
+        		<br />
+        		
               <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
-
+          
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Situação: Encomenda retirada</h5>
-              <p class="card-text">      
-                Recebida em: 13/06/2022<br />
-                Retirado por morador(a): José<br />
-                Apartamento: Bloco 1 - Unidade 202<br />
-                Entregue em: 13/06/2022 
-              </p>
+              <h5 class="card-title">Estado: Encomenda inativa</h5>
+              
+              <br />
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Morador(a)</th>
+                	<th>Bloco</th>
+                	<th>Andar</th>
+                	<th>Unidade</th>
+                	<th>Volume Grande</th>
+            	</tr>     
+            	<tr th:each="encomenda : ${listaEncomendas}" th:if="${encomenda.estado} == 4">
+                	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
+                	<td th:text="${encomenda.bloco}">Bloco</td>
+                	<td th:text="${encomenda.andar}">Andar</td>
+                	<td th:text="${encomenda.unidade}">Unidade</td>
+                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+            	</tr>
+        		</table>   
+        		
+        		<br />
+        		
               <a href="#" class="btn btn-primary">Mais informações</a>
             </div>
           </div>
 
-          <br>
+          <br />
           <button class="btn btn-primary" onClick="window.print()">Imprimir</button>
         </div>
       </div>

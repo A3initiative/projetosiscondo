@@ -137,6 +137,49 @@
 
         <br />
 
+        <div class="col-md-12">
+          <div class="card">
+            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Moradores cadastrados</strong></div>
+            <div class="card-body">
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Morador(a)</th>
+                	<th>E-mail</th>
+                	<th>Telefone</th>
+            	</tr>     
+            	<tr th:each="pessoa : ${listaMoradores}" th:if="${pessoa.perfil} == 'Mor'">
+                	<td th:text="${pessoa.nome}">Nome</td>
+                	<td th:text="${pessoa.email}">E-mail</td>
+                	<td th:text="${pessoa.telefone}">Telefone</td>
+            	</tr>
+        		</table>
+            </div>
+          </div>
+
+          <br />
+          
+          <div class="col-md-12">
+          <div class="card">
+            <div class="card-header" id="cardEncomendasDisponiveis"><strong>Usuários cadastrados</strong></div>
+            <div class="card-body">
+              
+              <table border="1">
+            	<tr>
+                	<th>Nome do(a) Usuário(a)</th>
+                	<th>E-mail</th>
+                	<th>Telefone</th>
+            	</tr>     
+            	<tr th:each="pessoa : ${listaMoradores}" th:if="${pessoa.perfil} != 'Mor'">
+                	<td th:text="${pessoa.nome}">Nome</td>
+                	<td th:text="${pessoa.email}">E-mail</td>
+                	<td th:text="${pessoa.telefone}">Telefone</td>
+                	<td th:text="${pessoa.perfil}">Perfil</td>
+            	</tr>
+        		</table>
+            </div>
+          </div>
+
         
 </main>
 

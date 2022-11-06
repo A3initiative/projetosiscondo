@@ -170,7 +170,7 @@
             <label for="selectNomeMorador" class="form-label">Nome do(a) morador(a)*</label>            
             <select name="nomeMorador" class="form-select" required>             
 			  <option selected value="">Selecione o(a) morador(a)</option> 
-			  <option th:each="morador : ${listaMoradores}" th:value="${morador.nome}" th:text="${morador.nome}"></option>
+			  <option th:each="morador : ${listaMoradores}" th:if="${morador.perfil} == 'Mor'" th:value="${morador.nome}" th:text="${morador.nome}"></option>
 			</select>
 			
           </div>
