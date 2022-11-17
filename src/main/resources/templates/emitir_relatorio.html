@@ -262,7 +262,11 @@
                 	<td th:text="${encomenda.unidade}">Unidade</td>
                 	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'">Volume Grande</td>
             	</tr>
-        		</table>   
+        		</table>
+        		
+        		<br>
+        		
+        		Total de encomendas registradas: <span th:text="${qtdEncomendas}"></span>   
             </div>
           </div>         
 
@@ -270,12 +274,13 @@
           
           <button class="btn btn-primary" onClick="window.print()">Imprimir</button>
         </div>
+        <br />
       </div>
     </main>
 
-    <footer class="navbar bottom navbar-light bg-light text-center">
+    <footer class="navbar bottom navbar-light text-center">
       <!-- Copyright -->
-      <div class="container-fluid p-3" id="footerAcesso">
+      <div class="container-fluid p-3" id="footer">
         <span class="text-center">&copy; A3 Initiative Corporation, 2022</span>
       </div>
       <!-- Copyright -->
