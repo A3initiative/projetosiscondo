@@ -82,7 +82,8 @@ public class Principal {
     }
     
     @RequestMapping(value="/projetosiscondo/alterar_usuario")
-    public String alterarUsuario(){
+    public String alterarUsuario(Model model){
+        model.addAttribute("listaUsuarios", pessoaRepository.findAll());
         return "alterar_usuario";
     }
 	
@@ -95,6 +96,7 @@ public class Principal {
      public String emitirRelatorio(Model model) {
          model.addAttribute("listaPessoas", pessoaRepository.findAll());
          model.addAttribute("listaEncomendasRegistradas", encomendaRepository.findAll());
+         model.addAttribute("qtdEncomendas", encomendaRepository.count());
          return "emitir_relatorio";
      }
 }
