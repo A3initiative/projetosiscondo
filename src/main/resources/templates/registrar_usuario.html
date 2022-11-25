@@ -7,6 +7,7 @@
     <title>SisCondo | Gestão de Usuários | Cadastro</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />    
     <link href="../css/bootstrap.min.css" rel="stylesheet" />  
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" rel="stylesheet" />  
     <link rel="icon" type="image/png" href="../imagens/A3initiative.png" />
   </head>
   <body>
@@ -14,20 +15,26 @@
     <main>
     
     <header>
-    	<nav class="navbar bg-light">
+    	<nav class="navbar navbar-expand-lg bg-light">
   			<div class="container-fluid">
     			<a class="navbar-brand" href="home">
       				<img src="../imagens/A3initiative.png" alt="imagem que representa a logomarca da empresa A3 Initiative Corporation" id="logo_principal" class="d-inline-block align-text-top">
       			SisCondo
     			</a>
   			</div>
+  			<span class="d-flex" style="padding-right: 2em;">        
+        	<a href="javascript: void(0);" id="constraste" data-theme="style2" name="theme"><i class="fa-solid fa-circle-half-stroke"></i></a>
+         	&nbsp;
+        	<a href="#" onclick="aumentar();"><i class="fa-solid fa-font">+</i></a> &nbsp;
+        	<a href="#" onclick="diminuir();"><i class="fa-solid fa-font">-</i></a>
+      		</span>
 		</nav>
 	</header>
 
 	<br>
 
 	<div class="container-fluid text-center">
-        Olá, supervisor(a) Admin! 
+        Olá, usuário(a)! 
         <a href="login">Sair</a>
       </div>
       
@@ -262,9 +269,9 @@
       </div>
     </main>
 
-    <footer class="navbar bottom navbar-light bg-light text-center">
+    <footer class="navbar bottom navbar-light text-center">
       <!-- Copyright -->
-      <div class="container-fluid p-3" id="footerAcesso">
+      <div class="container-fluid p-3" id="footer">
         <span class="text-center">&copy; A3 Initiative Corporation, 2022</span>
       </div>
       <!-- Copyright -->
@@ -273,5 +280,6 @@
     <script src="../js/valida.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
+	<script src="../js/scripts.js"></script> 
 </body>
 </html>

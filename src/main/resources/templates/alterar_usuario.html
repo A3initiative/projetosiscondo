@@ -71,13 +71,13 @@
                     aria-labelledby="navbarDropdownMenuLinkManterEncomenda"
                   >
                     <li>
-                      <a class="dropdown-item" href="#">Consultar encomenda</a>
+                      <a class="dropdown-item" href="consultar_encomenda">Consultar encomenda</a>
                     </li>
                     <li>
                       <a class="dropdown-item" href="registrar_encomenda">Registrar encomenda</a>
                     </li>
                     <li>
-                      <a class="dropdown-item" href="#">Alterar encomenda</a>
+                      <a class="dropdown-item" href="alterar_encomenda">Alterar encomenda</a>
                     </li>
                   </ul>
                 </li>
@@ -144,22 +144,19 @@
     <th>ID</td>
     <th>Nome</td>
     <th>E-mail</td>
-    <th>Excluir</th>
     <th>Alterar</td>
 
 </tr>
 
-<tr th:each="pessoa : ${pessoas}">
+<tr th:each="usuario : ${listaUsuarios}">
 
-    <td th:text="${pessoa.id}"></td>
+    <td th:text="${usuario.id}"></td>
 
-    <td th:text="${pessoa.name}"></td>
+    <td th:text="${usuario.nome}"></td>
 
-    <td th:text="${pessoa.email}"></td>
+    <td th:text="${usuario.email}"></td>
 
-    <td><a th:href="@{/delete(id=${pessoa.id})}">Deletar</a></td>
-
-    <td><a th:href="@{/update(id=${pessoa.id})}">Alterar</a></td>
+    <td><a th:href="@{/projetosiscondo/update(id=${usuario.id})}">Alterar</a></td>
 
 </tr>
 
@@ -167,9 +164,11 @@
         
 </main>
 
-<footer class="navbar bottom navbar-light bg-light text-center">
+<br />
+
+<footer class="navbar bottom navbar-light text-center">
       <!-- Copyright -->
-      <div class="container-fluid p-3" id="footerAcesso">
+      <div class="container-fluid p-3" id="footer">
         <span class="text-center">&copy; A3 Initiative Corporation, 2022</span>
       </div>
       <!-- Copyright -->

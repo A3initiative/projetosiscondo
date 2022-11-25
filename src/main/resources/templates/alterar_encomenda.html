@@ -142,33 +142,35 @@
               
               <br />
               
-              <table border="1">
+              <table border="1" style="width:100%">
             	<tr>
                 	<th>Nome do(a) Morador(a)</th>
                 	<th>Bloco</th>
                 	<th>Andar</th>
                 	<th>Unidade</th>
                 	<th>Volume Grande</th>
+                	<th>Alterar</th>
             	</tr>     
             	<tr th:each="encomenda : ${listaEncomendasRegistradas}">
                 	<td th:text="${encomenda.nomeMorador}">Nome do Morador</td>
                 	<td th:text="${encomenda.bloco}">Bloco</td>
                 	<td th:text="${encomenda.andar}">Andar</td>
                 	<td th:text="${encomenda.unidade}">Unidade</td>
-                	<td th:text="${encomenda.volumeGrande}">Volume Grande</td>
+                	<td th:text="${encomenda.volumeGrande} == 1 ? 'Sim' : 'Não'">Volume Grande</td>
+                	<td><a th:href="@{/projetosiscondo/encomenda/(${encomenda.id})}">Alterar</a></td>
             	</tr>
-        		</table>  
+        		</table> 
         		
-        		<br />
             </div>
-          </div>       
-        
-        
+          </div> 
+          
+          <br /> 
+          
     </main>
 
-    <footer class="navbar bottom navbar-light bg-light text-center">
+    <footer class="navbar bottom navbar-light text-center">
       <!-- Copyright -->
-      <div class="container-fluid p-3" id="footerAcesso">
+      <div class="container-fluid p-3" id="footer">
         <span class="text-center">&copy; A3 Initiative Corporation, 2022</span>
       </div>
       <!-- Copyright -->
@@ -176,7 +178,7 @@
     
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-	<script src="../js/camera.js"></script>
-
+	
+    <script src="https://use.fontawesome.com/releases/v5.15.4/js/all.js" integrity="sha384-rOA1PnstxnOBLzCLMcre8ybwbTmemjzdNlILg8O7z1lUkLXozs4DHonlDtnE7fpc" crossorigin="anonymous"></script>
 </body>
 </html>
