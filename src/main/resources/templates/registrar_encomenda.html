@@ -1,8 +1,7 @@
 <!DOCTYPE html>
-<html lang="pt-br" xmlns:th="http://www.thymeleaf.org">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SisCondo | Gestão de Encomendas | Registrar</title>
     <link rel="stylesheet" type="text/css" href="../css/styles.css" />
@@ -24,7 +23,7 @@
     			</a>
   			</div>
   			<span class="d-flex" style="padding-right: 2em;">        
-        <a href="javascript: void(0);" id="constraste" data-theme="style2" name="theme"><i class="fa-solid fa-circle-half-stroke"></i></a>
+        <a href="#" onclick="aplicaModoEscuro();"><i class="fa-solid fa-circle-half-stroke"></i></a>
          &nbsp;
         <a href="#" onclick="aumentar();"><i class="fa-solid fa-font">+</i></a> &nbsp;
         <a href="#" onclick="diminuir();"><i class="fa-solid fa-font">-</i></a>
@@ -36,7 +35,7 @@
 
 	<div class="container-fluid text-center">
         Olá, usuário(a)! 
-        <a href="#">Sair</a>
+        <a href="#" id="sair">Sair</a>
       </div>
       
       <br>
@@ -249,9 +248,10 @@
       <!-- Copyright -->
     </footer>
     
+    
+	<script src="../js/scripts.js"></script>
     <script src="../js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3" crossorigin="anonymous"></script>
-	<script src="../js/camera.js"></script>
-	<script src="../js/scripts.js"></script> 
+	<script src="../js/camera.js"></script> 
 </body>
 </html>

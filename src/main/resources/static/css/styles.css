@@ -35,11 +35,19 @@ footer{
 	color: #000000;
 }
 
- /* Modo de alto contraste ativo */ 
-  @media (-ms-high-contrast: active) {  }
-    
-   /* Modo de alto contraste com tema preto sobre branco  */ 
-   @media (-ms-high-contrast: black-on-white) { }
-   
-   /* Modo de alto contraste com um tema específico em branco sobre preto */ 
-   @media  (-ms-high-contrast: white-on-black) {   }
+.dark-mode {
+  background-color: black;
+  color: #FFFFFF;
+}
+
+.dark-mode + h5.card-title {
+  color: #FFFFFF;
+}
+
+.dark-mode a#sair{
+	color: yellow;
+}
+
+/*.dark-mode h1, h2, li, label{
+	color: #FFFFFF;
+}*/

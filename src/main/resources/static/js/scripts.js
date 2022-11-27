@@ -8,6 +8,22 @@ var diaSemana = dataAtual.getDay() + 1;
 
 document.getElementById("dataHora").innerHTML = "Hoje é " + dia + "/" + mes + "/" + ano + ", " + horas + "h" + minutos + ".";
 
+function aplicaModoEscuro() {
+  var element = document.body;
+  element.classList.toggle("dark-mode");
+}
+
+/* controle do tamanho de letras */
+tamanho = 16;
+function diminuir(){
+  tamanho--;
+  document.body.style.fontSize=tamanho+"px";
+}
+function aumentar(){
+  tamanho++;
+  document.body.style.fontSize=tamanho+"px";
+}
+
 let theme = localStorage.getItem('data-theme');
 const changeThemeToDark = () => {
     document.documentElement.setAttribute("data-theme", "dark") // set theme to dark
@@ -32,13 +48,3 @@ link.addEventListener('change', () => {
 });
 
 
-/* controle do tamanho de letras */
-tamanho = 16;
-function diminuir(){
-  tamanho--;
-  document.body.style.fontSize=tamanho+"px";
-}
-function aumentar(){
-  tamanho++;
-  document.body.style.fontSize=tamanho+"px";
-}
