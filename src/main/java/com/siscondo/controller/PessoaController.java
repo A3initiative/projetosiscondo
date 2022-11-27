@@ -22,7 +22,7 @@ import com.siscondo.model.Pessoa;
 import com.siscondo.repository.PessoaRepository;
 
 @RestController
-@RequestMapping("/projetosiscondo/index")
+@RequestMapping("/projetosiscondo")
 public class PessoaController {
 	
 	 @Autowired

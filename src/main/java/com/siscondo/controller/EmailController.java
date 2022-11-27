@@ -83,7 +83,7 @@ public Encomenda encomenda;
            message.setFrom(new InternetAddress(user));  
            message.addRecipient(Message.RecipientType.TO,new InternetAddress(to));  
            message.setSubject("SisCondo - Encomenda Registrada");  
-           message.setText("Olá, " + nomeMorador + ", sua encomenda está registrada no sistema SisCondo.\n\nSisCondo | Grupo Condomínio\ncondominio.siscondo@terra.com.br");  
+           message.setText("Olá, " + nomeMorador + ", sua encomenda está registrada no sistema SisCondo. \n\nSisCondo | Grupo Condomínio\ncondominio.siscondo@terra.com.br");  
              
           //send the message  
            Transport.send(message);  

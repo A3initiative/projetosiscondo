@@ -15,14 +15,14 @@ public class Morador {
     private String bloco;
     private String andar;
     private String unidade;
-    private String moradorresponsavel;
-    private String idmorador;
+    private int moradorresponsavel;
+    private int idmorador;
     
     public Morador() {
         
     }
  
-    public Morador(String bloco, String andar, String unidade, String moradorresponsavel, String idmorador) {
+    public Morador(String bloco, String andar, String unidade, int moradorresponsavel, int idmorador) {
          this.bloco = bloco;
          this.andar = andar;
          this.unidade = unidade;
@@ -67,21 +67,21 @@ public class Morador {
         this.unidade = unidade;
     }
     
-    @Column(name = "moradorresponsavel", nullable = false)
-    public String getMoradorresponsavel() {
+    @Column(name = "moradorresponsavel", nullable = true)
+    public int getMoradorresponsavel() {
         return moradorresponsavel;
     }
 
-    public void setMoradorresponsavel(String moradorresponsavel) {
+    public void setMoradorresponsavel(int moradorresponsavel) {
         this.moradorresponsavel = moradorresponsavel;
     }
     
     @Column(name = "idmorador", nullable = true)
-    public String getIdmorador() {
+    public int getIdmorador() {
         return idmorador;
     }
 
-    public void setIdmorador(String idmorador) {
+    public void setIdmorador(int idmorador) {
         this.idmorador = idmorador;
     }
 

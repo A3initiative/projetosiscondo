@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.siscondo.model.Encomenda;
+import com.siscondo.model.Pessoa;
 import com.siscondo.service.EncomendaService;
 
 @Controller
@@ -19,6 +20,7 @@ public class EncomendaBDController {
     
     @Autowired(required = false)
     private EncomendaService encomendaService;
+    
     
     @RequestMapping(value = "registrar_encomenda", method = RequestMethod.GET)
 
@@ -40,7 +42,14 @@ public class EncomendaBDController {
         
         EmailController email = new EmailController(); 
         
-        email.enviaEmailEncomenda("anamariasilva.email@gmail.com", encomenda.getNomeMorador()); 
+        Pessoa pessoa = new Pessoa();
+        pessoa.setNome(encomenda.getNomeMorador());
+        
+        //if (encomenda.getNomeMorador() == "Não especificado") {
+            
+        //}
+                
+        email.enviaEmailEncomenda("ana.maria1405@gmail.com", encomenda.getNomeMorador()); 
 
         return "home";
 
